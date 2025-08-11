@@ -1,0 +1,15 @@
+[variables]
+NIXPACKS_BUILD_CMD = 'cd backend && npm install && npm run build'
+NIXPACKS_START_CMD = 'cd backend && npm start'
+
+[phases.setup]
+nixPkgs = ['nodejs_18', 'npm']
+
+[phases.install]
+cmds = ['cd backend && npm ci']
+
+[phases.build]
+cmds = ['cd backend && npm run build']
+
+[start]
+cmd = 'cd backend && npm start'
